@@ -7,16 +7,19 @@ function init() {
   document.body.addEventListener('keydown', function onKeyDownHandler(e) {
 	  const key = parseInt(e.detail || e.which);
 
-	   if (key === code[index]) {
-	      index++;
+    let index = 0;
 
-	       if (index === code.length) {
-	          alert("Hurray!");
+ document.body.addEventListener('keydown', function(e){
+  const key = parseInt(e.detail || e.which);
 
-	           index = 0;
-	          }
-	         } else {
-	            index = 0;
-	           }
-	          });
+  if (key === code[index]){
+    index++;
+    if (index === code.length){
+      alert("Hurray!");
+      index = 0;
+    }
+  } else {
+    index = 0;
+  }
+});
 }
