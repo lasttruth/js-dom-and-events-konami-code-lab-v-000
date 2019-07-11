@@ -5,14 +5,13 @@ function init() {
   let index = 0;
 
   function onKeyDownHandler(e) {
-    const key = parseInt(e.detail || e.which);
+    console.log(e.which);
+    const key = parseInt(e.which || e.detail);
 
     if (key === code[index]) {
       index++;
-
       if (index === code.length) {
-        alert("Hurray!");
-
+        alert("Congrats on solving the Konami Code!");
         index = 0;
       }
     } else {
@@ -20,5 +19,6 @@ function init() {
     }
   }
 
+  document.body.addEventListener('keydown', onKeyDownHandler)
 
 }
